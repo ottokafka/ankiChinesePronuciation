@@ -337,8 +337,35 @@ function anikMake(str) {
 
 ankiArray.push(anki);
 
-    document.getElementById("output2").innerHTML = "<textarea>"+ ankiArray +"</textarea>";
+
+
+    document.getElementById("output2").innerHTML = "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"//+"<button onclick='setClipboard(ankiOutput)'>"+ "Set Clipboard" + "</button>"
+
+    var ankiOutput = document.getElementById("ankiResult").value;
+
+    setClipboard(ankiOutput)
 }
+
+
+
+
+
+function setClipboard(value) {
+    var tempInput = document.createElement("input");
+    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+    tempInput.value = value;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+}
+
+
+
+
+
+
+
 
 
 
