@@ -19,6 +19,7 @@
 var a1;
 var anki;
 var ankiArray = [];
+var ankiOutput;
 //for (var i = 0; i < splitItArr.length; i++) {anikMake(splitItArr[i])}
 
 
@@ -339,9 +340,17 @@ ankiArray.push(anki);
 
 
 
-    document.getElementById("output2").innerHTML = "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"//+"<button onclick='setClipboard(ankiOutput)'>"+ "Set Clipboard" + "</button>"
 
-    var ankiOutput = document.getElementById("ankiResult").value;
+
+
+
+
+    document.getElementById("output").innerHTML = "<textarea id='pinyin'>" +"</textarea>"+
+        "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"+ "<button onclick='checkPinyin()'>" + "click" +"</button>" + "<button onclick='reset()'>" + "Reset" +"</button>";
+
+    //document.getElementById("output").innerHTML = "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"
+
+     ankiOutput = document.getElementById("ankiResult").value;
 
     setClipboard(ankiOutput)
 }
@@ -362,7 +371,14 @@ function setClipboard(value) {
 
 
 
+function reset() {
+    ankiOutput = document.getElementById("ankiResult")
 
+    document.getElementById("output").innerHTML = "<textarea id='pinyin'>" +"</textarea>"+
+        "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"+ "<button onclick='checkPinyin()'>" + "click" +"</button>";
+
+
+}
 
 
 
