@@ -352,7 +352,7 @@ ankiArray.push(anki);
 
      ankiOutput = document.getElementById("ankiResult").value;
 
-    setClipboard(ankiOutput)
+    //setClipboard(ankiOutput)
 }
 
 
@@ -372,7 +372,7 @@ function setClipboard(value) {
 
 
 function reset() {
-    ankiOutput = document.getElementById("ankiResult")
+    ankiArray = []
 
     document.getElementById("output").innerHTML = "<textarea id='pinyin'>" +"</textarea>"+
         "<textarea id='ankiResult'>"+ ankiArray +"</textarea>"+ "<button onclick='checkPinyin()'>" + "click" +"</button>";
